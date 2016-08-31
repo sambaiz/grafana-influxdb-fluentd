@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: influxdb
+  labels:
+    app: influxdb
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: influxdb
+    spec:
+      containers:
+      - name: influxdb
+        image: gcr.io/moonlit-autumn-141913/influxdb:v1
+        ports:
+        - containerPort: 8083
+        - containerPort: 8086
+      imagePullSecrets:
+      - name: myregistrykey

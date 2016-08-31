@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: testapp
+  labels:
+    app: testapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: testapp
+    spec:
+      containers:
+      - name: app
+        image: gcr.io/moonlit-autumn-141913/testapp:v7
+      imagePullSecrets:
+      - name: myregistrykey
