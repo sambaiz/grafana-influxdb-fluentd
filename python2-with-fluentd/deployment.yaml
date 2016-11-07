@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: gcr.io/moonlit-autumn-141913/testapp:v7
+        image: gcr.io/moonlit-autumn-141913/testapp:v31
       imagePullSecrets:
       - name: myregistrykey
